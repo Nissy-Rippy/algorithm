@@ -23,4 +23,4 @@ print "-----------------\n"
 puts int
 puts str
 puts arr
-
+9
