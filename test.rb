@@ -31,7 +31,7 @@ end
     next if n.even?
     puts n
   end
-  
+
 
 
 def calc_with_break
@@ -54,13 +54,13 @@ puts calc_with_break
 
 def greeting(country)
   return "countryを入力してください" if country.nil?
-  
+
   if country == "japan"
      "こんにちは"
    else
      "hello"
    end
-   
+
  end
 
 puts greeting(nil)
@@ -75,7 +75,7 @@ puts n
 break if n == 5
 i += 1
 end
-    
+
 
 numbers = [1,2,3,4,5,6,7,8].shuffle
 numbers.each do |number|
@@ -84,7 +84,7 @@ numbers.each do |number|
 end
 
 
-  
+
 sum = 0
 5.times { |n| sum += n }
 p sum
@@ -153,14 +153,14 @@ def charge(age)
   when 20..100
     4000
   end
-  
+
 end
 p charge(59)
 
 
 a = "豊田ーよっしー"
 p a[3...5]
- 
+
 a = "abcdefghifklmnopqrstu"
 p a[1..5]
 
@@ -185,7 +185,7 @@ new = nu.map do |n|
   n * 10
 end
 puts new
-  
+
 
 
  ss= 0
