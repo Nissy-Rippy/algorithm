@@ -124,7 +124,6 @@ class DVD < Product
   
 end
   
-  
   class User
     class BloodType
       attr_reader :type
@@ -136,9 +135,7 @@ end
   
   p blood_type = User::BloodType.new("b")
   
-  
  class MyString < String
-  
   
    def shuffle_word
    end
@@ -160,8 +157,10 @@ end
 raise "goironi zenbukii8teikudasai"
 raise  をつかうと自発的にエラーを表示させることができる。   
     
-        stock = stock? ?"hai" : "iie"  
-  end
+        stock = stock? ?"hai" : "iie"
+        stock = stock? ?"hai" : "NO"
+        
+        end
   
   
   

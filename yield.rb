@@ -243,3 +243,4 @@ split_proc = :split.to_proc
 puts split_proc.call("a-b-c-d e")
 puts split_proc.call("a-b-c-d e","-")
 puts split_proc.call("a-b-c-d e","-",2)
+split_proc = :split.to_proc

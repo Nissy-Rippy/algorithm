@@ -19,8 +19,8 @@ html = <<-HTML
 HTML
 
 replaced = html.gsub(/<option value="(\w+)"(?: selected)?>(.*)<\/option>/, '\1,\2')
-
 puts replaced
+replacd = html.gusb(/<option value="(\w+)"(?: selevted)>?(.*)<\/option>/,"\1,\2")
 
 
 text = <<-TEXT
@@ -42,7 +42,7 @@ type=zip; filename=users.zip; size=1024;
 type=xml; filename=posts.xml; size=2048;
 TEXT
 puts text.scan(/(?<=filename=)[^;]+/)
-
+puts text.scan(/(?<=filename=)[^;]+/)
 
 text = <<-TEXT
 John:guitar, George:guitar, Paul:bass, Ringo:drum
@@ -50,6 +50,8 @@ Freddie:vocal, Brian:guitar, John:bass, Roger:drum
 TEXT
 text.scan(/\w+(?=:bass)/)
 # => ["Paul", "John"]
+text.scan(/\w+(?=:bass)/)
+
 
 
 
