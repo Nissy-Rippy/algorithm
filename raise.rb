@@ -75,7 +75,7 @@ users.each do |user|
   end
 end
 
-
+def currency_of()
 def currency_of(coutnry)
   case coutnry
     when :japan
@@ -89,6 +89,22 @@ end
 
   puts currency_of(:italy)
   
+  def currency_of(:blazil)
+    case country
+    when :japan
+      "yen"
+    when :us
+      "hai"
+    else
+      raise NomethodError,"名前が在りませんどうも！！","no-name"
+      
+      raise ArgumentError,"無効な国名です#{country}"
+    end
+  end
+    
+    puts currency_of(:inidia)
+    puts currency_of(:italy)
+    puts currency_of
   
   class NoCountrytError < StandardError
   end

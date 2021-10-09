@@ -108,6 +108,7 @@ class Product
   def self.name
     @@name
   end
+  
   def initialize(name)
     @@name
   end
@@ -121,7 +122,6 @@ class DVD < Product
   @@name = "GORIO"
   def self.name
     @@name
-  
 end
   
   class User
