@@ -6,7 +6,16 @@ p currencies
  currencies.each do |key,value|
    puts "#{key} : #{value}である"
  end
-
+ 
+ man = {
+   name: "dannie",
+   age: 20,
+   postal_code: {my_house: "1234446", other_house: "44353523"}
+ }
+ 
+ man[:name]
+ man[:postal_code][:other_house]
+ man[:age]
  person = {
    name: "Alice",
    age: 20,

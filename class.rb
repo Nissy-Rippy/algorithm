@@ -93,10 +93,11 @@ class product
   DEFAULT_PRICE = 2000
   DEFAULT_PRICE = 30000
   AGE_OF_GORIRA = 30
-en
+  
+  
 Product :: DEFULT_PRICE
 Product :: AGE_OF_GORIRA
-Product:: AGEOF_GORITA
+Product :: AGEOF_GORITA
 
 
 Product::SOME_NAMES
@@ -122,7 +123,7 @@ class DVD < Product
   @@name = "GORIO"
   def self.name
     @@name
-end
+  end
   
   class User
     class BloodType
@@ -159,7 +160,6 @@ raise  をつかうと自発的にエラーを表示させることができる�
     
         stock = stock? ?"hai" : "iie"
         stock = stock? ?"hai" : "NO"
-        
         end
   
   

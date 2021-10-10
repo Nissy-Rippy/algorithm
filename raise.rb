@@ -111,15 +111,14 @@ end
   
   def currency_of(country)
     case country
-        when :japan
-             "yen"
-        when :us
-             "dollar"
-        when :india
-             "rupee"
-           else
-             raise NoCountrytError, "これは無効な国名です#{}"
-        
+      when :japan
+           "yen"
+      when :us
+           "dollar"
+      when :india
+           "rupee"
+      else
+           raise NoCountrytError, "これは無効な国名です#{}"
     end
   end
   

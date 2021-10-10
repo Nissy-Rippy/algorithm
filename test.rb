@@ -11,11 +11,6 @@
 #refute a
 
 
-
-
-
-
-
 foods = ["ピーマン","バナナ","ぶどう"]
 foods.each do |food|
   answer = ["はい","いいえ"].sample
@@ -23,15 +18,30 @@ foods.each do |food|
   redo if answer == "いいえ"
 end
 
+drinks = ["vitamin","cola","sprotsjuice"]
+drinks.each do |drink|
+  answer = ["はい","いいえ"].sample
+  puts "#{drink}はお好きですか？？ #{answer}"
+end
 
-
+meats = ["松阪牛","神戸牛","飛騨牛"]
+meats.each do |meat|
+  answer = ["はい","いいえ"]
+  puts "#{meat}はお肉ですか？？」#{answer}"
+end
 
   numbers = [1,2,3,4,5,6,7,8]
   numbers.each do |n|
     next if n.even?
     puts n
   end
-
+  
+  
+numbers =[1,2,3,4,5,6,]
+numbers.each do |number|
+  next if n.odd?
+  puts n
+end
 
 
 def calc_with_break
@@ -47,21 +57,16 @@ puts calc_with_break
 
 
 
-
-
-
-
-
 def greeting(country)
   return "countryを入力してください" if country.nil?
-
+ 
   if country == "japan"
      "こんにちは"
-   else
+  else
      "hello"
-   end
+  end
 
- end
+end
 
 puts greeting(nil)
 
@@ -70,12 +75,19 @@ numbers = [1,2,3,4,5,6,7,8].shuffle
 i = 0
 
 while numbers.size > i
-n = numbers[i]
-puts n
-break if n == 5
-i += 1
+ n = numbers[i]
+  puts n
+ break if n == 5
+ i += 1
 end
 
+i = 0
+while numbers.size > i
+  n = numbers[i]
+  puts n
+  break if n == 5
+  i += 1
+end
 
 numbers = [1,2,3,4,5,6,7,8].shuffle
 numbers.each do |number|
@@ -132,6 +144,27 @@ b = [2,3]
 a.push(1)
 a.push(*b)
 
+a,b,c = 100,200,300
+a,*b  = 199,100,200,300,400
+a = []
+
+a.push(*b)
+p a
+
+%W!apple banana gorio tamanegi!
+%W!drink food meat fish animal!
+%W!human animal bird fish city!
+
+Array.new(5) {"default"}
+Array.new(3) {"default"}
+
+
+areas = []
+dimensions = [[10,20],[20,20]]
+dimensions.each do |height,width|
+  areas << height * width
+end
+
 
 e,f,d = 100,200,2003,300,400
 e,f,*g = 300,40005,6000,700,800,200
@@ -155,7 +188,13 @@ def charge(age)
   end
 
 end
+
 p charge(59)
+
+numbers = [1,2,3,4,5,6,7,8,9,0]
+even_number = numbers.select { |number| number % 2 == 0 }
+
+
 
 
 a = "豊田ーよっしー"
@@ -185,8 +224,11 @@ new = nu.map do |n|
   n * 10
 end
 puts new
-
-
+sum = 0
+numbers = [1,2,3,4,5,6]
+numbers.each do |number|
+  sum_value = number.even? ? number *10 : number
+  sum += sum_value
 
  ss= 0
 numbers1 = [1,2,3,4,5,6]
