@@ -71,6 +71,11 @@ greeting do |ozi,oyazi,ozii|
   ozi + oyazi + ozii
 end
 
+def greeting(&block)
+  puts %W(おはよう　こんにちは)
+  text = block.call("こんにちは")
+  puts %W(そこは、こんばんはでしょ！！)
+end
 
 def greeting(&block)
   puts "おはよう"
@@ -126,13 +131,13 @@ end
   def greeting(&block)
     puts "おはよう"
     text =
-       if block.arity == 1
-          yield "こんにちは"
-    elsif 
-          block.arity == 2
-          yield "こんにちは","こんばんは"
-       end
-       puts text
+     if block.arity == 1
+        yield "こんにちは"
+     elsif 
+        block.arity == 2
+        yield "こんにちは","こんばんは"
+     end
+    puts text
     puts "こんばんは"
   end
   
@@ -140,11 +145,15 @@ end
     text * 2 + text1 * 2
   end
   
-  
+  hi_proc = Proc.new {"hello world"}
+  puts hi_proc.call
   
   hello_proc = Proc.new {"hello"}
   puts hello_proc.call
   
+multiple_proc = Proc.new { |a,b| a * b}
+puts multiple_proc(4,5)
+
 add_proc = Proc.new {|a,b| a + b}
 
 puts add_proc.call(1,3)
@@ -169,11 +178,12 @@ end
 greeting do |text|
   text
 end
-  
+repeat_proc = Proc.new { |one| one * 3 }
+puts repeat_proc.call(4)
+
 repeat_proc = Proc.new { |text11| text11 * 2 }
 puts greeting(&repeat_proc)
 
-  
 def greeting(arrange_proc)
    puts "おはよう"
    text = arrange_proc.call("こんにちは")
@@ -188,10 +198,8 @@ end
   
   def judge(age)
     adult = Proc.new{|age| age > 20}
-    child = Proc.new{|age| age <20}
-    
+    child = Proc.new{|age| age < 20}
     case age
-    
     when adult
       "大人です"
     when child
@@ -199,7 +207,6 @@ end
     else
       "畑地です"
     end
-  
   end
   
   puts judge(25)
@@ -238,6 +245,11 @@ end
 reverse_proc = Proc.new {|n| n.reverse }
 ["Ruby","PGIIGI","HGORIRI"].map(&reverse_proc)
 
+
+puts reverse_proc.call("ruby")
+
+reverse_proc = :reverse.to_proc
+split_proc = :split.to_proc
 split_proc = :split.to_proc
 split_proc = :split.to_proc
 puts split_proc.call("a-b-c-d e")

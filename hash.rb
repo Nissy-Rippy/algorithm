@@ -16,6 +16,7 @@ p currencies
  man[:name]
  man[:postal_code][:other_house]
  man[:age]
+ 
  person = {
    name: "Alice",
    age: 20,
@@ -38,8 +39,10 @@ currencies = {country: "japan",age: "27",sex: "male"}
 
 p currencies[:sex]
 p currencies.to_a
-
-
+%W(today is Monday)
+%W(today is friday)
+%W(this is a pen)
+%s(today is good)
 %s(ruby is fun)
 %s(PHP is good)
 %s(JAVA is god)
@@ -66,7 +69,7 @@ a.upcase
 a&.upcase # これを使うことによってnilの時はしっかりnilを返してくれるので便利である。
 
 
-
+limit ||= 20
 limit || 10
 limit = nil 
 limit || 10
