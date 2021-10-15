@@ -221,7 +221,7 @@ end
       puts proc_3.call("こんばんは")
   end
   
-  shuffle_proc = Proc.new { |text| text.chars.shuffle.join }
+  character_shuffle_proc = Proc.new { |text| text.chars.shuffle.join }
   repeat_proc = Proc.new {|text| text * 2}
   question_proc = Proc.new {|text| "#{text}?"}
   

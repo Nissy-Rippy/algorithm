@@ -20,22 +20,22 @@ HTML
 
 replaced = html.gsub(/<option value="(\w+)"(?: selected)?>(.*)<\/option>/, '\1,\2')
 puts replaced
-replacd = html.gusb(/<option value="(\w+)"(?: selevted)>?(.*)<\/option>/,"\1,\2")
+replaced = html.gsub(/<option value="(\w+)"(?: selevted)>?(.*)<\/option>/,"\1,\2")
+replaced = html.gsub(/<option value="(\w+)"(?: selected)?>'(.*)<\/option>/,"\1,\2")
 
+# text = <<-TEXT
+# def hello(name)
+#   puts "Hello, \#{name}!"
+# end
 
-text = <<-TEXT
-def hello(name)
-  puts "Hello, \#{name}!"
-end
+# hello('Alice')
 
-hello('Alice')
+# hello('Bob')
 
-hello('Bob')
+# hello('Carol')
+# TEXT
 
-hello('Carol')
-TEXT
-
-puts text.gsub(/^[ \t]+$/, '')
+# puts text.gsub(/^[ \t]+$/, '')
 
 text = <<-TEXT
 type=zip; filename=users.zip; size=1024;
@@ -48,10 +48,18 @@ text = <<-TEXT
 John:guitar, George:guitar, Paul:bass, Ringo:drum
 Freddie:vocal, Brian:guitar, John:bass, Roger:drum
 TEXT
-text.scan(/\w+(?=:bass)/)
-# => ["Paul", "John"]
-text.scan(/\w+(?=:bass)/)
+text = <<-Text
+John:guitar, George:guitar, Paul:bass, Ringo:drum
+Freddie:vocal, Brian:guitar, John:bass, Roger:drum
+Text
 
+puts text.scan(/\w+(?=:bass)/)
+puts text.scan(/\w+(?=:bass)/)
+# => ["Paul", "John"]
+puts text.scan(/\w+(?=:bass)/)
+puts text.scan(/\w+(?=:guitar)/)
+
+text.scan(/\w+(?=:bass)/)
 
 
 
@@ -59,6 +67,7 @@ text = "私の誕生日は199年5月45日です"
 m = /(\d+)年(\d+)月(\d+)日/.match(text)
 
 p m
+
 m[0]
 m[1]
 m[2]
@@ -70,7 +79,16 @@ m[-1,2]
 
 text = "私の生まれた年は1229年3月34日です正規表現で引き抜いてください"
 m = text.match(/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/)
+
+m = text.match(/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/)
+
+m = text.match(/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/)
 puts m
+
+puts m[:year]
+puts m[:month]
+puts m[:day]
+
 
 puts m[:year]
 puts m[:month]
@@ -99,3 +117,5 @@ p Regexp.last_match(0)
 p Regexp.last_match(1)
 p Regexp.last_match(2)
 p Regexp.last_match(-1)
+
+
