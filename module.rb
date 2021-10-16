@@ -59,12 +59,14 @@ private
     puts "[log] #{title}"
   end
 end
+
 class Product
   include Loggable
   def name 
     log "A is a good movie"
     "name is good"
   end
+
 class Product
 
 include Loggable
@@ -84,24 +86,35 @@ module Loggable
   def log(text)
     puts "[log] #{text} "
   end
+end
 
   class Product
     extend Loggable
 
-  def self.create_products([])
+   def self.create_products([])
      log "Dfined Product class"
-     Product.create_product
-     Product.log
- end
+   end
+   
+  end
+  puts Product.create_product
+  puts Product.log
  
- 
+ module Loggabe
+   def log(text)
+     puts "[log] #{text}"
+   end
+  end
+  
  class Product
    extend Loggable
    def self.create_products([])
      log "Dfined Pro"
    end
  end
-
+ 
+ puts Produc.create_products
+ 
+ 
 
 　　class Product
 　　  extend Loggable
@@ -155,7 +168,6 @@ end
 　　  end
 
 　　end
-
 　　s = "gorio"
 　　s.extend(Loggable)
 
@@ -164,7 +176,13 @@ end
 　　puts s.extend("goriri")
 
 　　puts s. extend("goriri")
+　　
 
+　　s = "gorio"
+　　s.extend(Loggabe)
+　　ptus s.log("goriri")
+　　puts s.extend()
+　　
 　　module Baseball
 　　  class Second
 　　    def initialize(player,uniform_number)
@@ -198,6 +216,7 @@ end
 
 
 　　  module Loggable
+　　    
 　　    def log(text)
 　　      " log #{text}"
 　　    end
@@ -219,12 +238,19 @@ end
    def hello
      "Hi"
    end
+   def greeting
+     "good_morning"
+   end
  end
  
  module Evening
    include Greeting
    def hallo
      "#{hello} and hallo"
+   end
+   
+   def hi
+     "#{greeting} everyone!!! nice to meet you!!"
    end
  end
  
@@ -243,7 +269,7 @@ class Product
   def name 
    "A great film"
  end
- end
+end
  
  module NameDecorator
    def name
@@ -261,8 +287,9 @@ class Product
    refine String do
      def shuffle
        chars.shuffle.join
-    end
-  end
+     end
+   end
+
 end
 
 

@@ -1,3 +1,5 @@
+
+
 a = <<TEXT
 これはヒアドキュメントです。
 複数行に渡る長い文字列を作成するのに便利です。
@@ -15,6 +17,7 @@ puts some_method
 
 
 a = "Ruby"
+
 puts a.prepend(<<TEXT)
 PHP
 JAVA
@@ -51,8 +54,9 @@ end
 
 n = 11
 
-messate = n > 10 ? "10よりも大きい" : "10よりも小さい"
+message = n > 10 ? "10よりも大きい" : "10よりも小さい"
 
+puts message
 
 def greeting(country = "japan")
   if country == "japan"
@@ -63,7 +67,7 @@ def greeting(country = "japan")
 end
 
 greeting
-greeting("us")
+puts greeting("us")
 
 def default_args(a,b,c = 0,d = 0)
   "a = #{a} b = #{b} c = #{c}"
@@ -79,7 +83,6 @@ end
   3.even?
   "abc".empty?
   nil.nil?
-  
   
   
   
