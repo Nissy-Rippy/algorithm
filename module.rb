@@ -5,6 +5,19 @@ module Greeter
 
 end
 
+
+module Greeter
+  def hello
+    "hello"
+  end
+end
+class Product
+  def title 
+    log "title is called"
+    puts "log #{text}"
+  end
+end
+
 class Product
   def title
     log "title is called"
@@ -29,7 +42,6 @@ private
 def log(text)
   puts "[LOG] #{text}"
 end
-
 end
 
 
@@ -47,7 +59,12 @@ private
     puts "[log] #{title}"
   end
 end
-
+class Product
+  include Loggable
+  def name 
+    log "A is a good movie"
+    "name is good"
+  end
 class Product
 
 include Loggable
@@ -73,12 +90,17 @@ module Loggable
 
   def self.create_products([])
      log "Dfined Product class"
-  end
+     Product.create_product
+     Product.log
  end
-   Product.create_products
-   Product.log #として呼ぶこともできる
-　　Product.log
-　　extend Loggable
+ 
+ 
+ class Product
+   extend Loggable
+   def self.create_products([])
+     log "Dfined Pro"
+   end
+ end
 
 
 　　class Product
@@ -89,11 +111,25 @@ module Loggable
 
 
 
-　　module Price
+　 module Price
 　　  def price_tag(price)
 　　    "#{price} 円になります"
 　　  end
 　　end
+
+module Amount
+  def amount_count(count)
+    "#{count}個になります"
+  end
+end
+
+class Shop
+  include Amount
+  
+  def amount
+    "100"
+  end
+end
 
 
 　　class Price

@@ -18,6 +18,7 @@ html = <<-HTML
 </select>
 HTML
 
+replaced = html.gsub(/option value="(\w+)"(?: selected)?>(.*)<\/option>/,"\1,\2")
 replaced = html.gsub(/<option value="(\w+)"(?: selected)?>(.*)<\/option>/, '\1,\2')
 puts replaced
 replaced = html.gsub(/<option value="(\w+)"(?: selevted)>?(.*)<\/option>/,"\1,\2")
@@ -65,7 +66,8 @@ text.scan(/\w+(?=:bass)/)
 
 text = "私の誕生日は199年5月45日です"
 m = /(\d+)年(\d+)月(\d+)日/.match(text)
-
+text = "私の誕生日は1999年19月39日ですというときには"
+m = text.scan(/()年年()月()日/)
 p m
 
 m[0]
