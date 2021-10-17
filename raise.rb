@@ -13,6 +13,9 @@ rescue
 end
 
 puts "end"
+#start
+#例外が発生したが、このままプログラムを続けます
+#endとなるbegin のコードは実行されずスルーされている
 
 begin
   1/0
@@ -75,7 +78,6 @@ users.each do |user|
   end
 end
 
-def currency_of()
 def currency_of(coutnry)
   case coutnry
     when :japan
@@ -89,8 +91,10 @@ end
 
   puts currency_of(:italy)
   
-  def currency_of(:blazil)
+  def currency_of(blazil)
+   
     case country
+  
     when :japan
       "yen"
     when :us

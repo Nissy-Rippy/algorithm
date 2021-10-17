@@ -319,14 +319,18 @@ module StringShuffle
   end
 end
 
-module 
+module StringShuffle
+
   refine String do
     
     def shuffle
-      chars.shulle.join
+      chars.shuffle.join
     end
   end
-  
-  class Stringpp
+end
+
+
+  #usingによって利用することができる
+  class String
     using StringShuffle
-    
+  end

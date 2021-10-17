@@ -120,4 +120,35 @@ p Regexp.last_match(1)
 p Regexp.last_match(2)
 p Regexp.last_match(-1)
 
+regex = /\d{{3}-\d{4}/
 
+puts regex.class
+#=regexp
+"123-456" =~ regex
+#0
+"hello" =~ regex
+#nil
+"hello" !~ regex
+#true
+
+
+if "123-3454" =~ /\d{3}-\d{4}/
+    puts "郵便番号です"
+else
+    puts "マッチしませんでした"
+end
+
+text = "私の誕生日は199年3月4日"
+m = text.scan(/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/)
+puts m
+puts m[:year]
+puts m[:month]
+puts m[:day]
+
+
+text = 123-455_4345
+puts text.gsub(/-|_,":"/)
+
+
+text = あなたの誕生日は200年3月3日ですよろしくお願いします
+puts text.gsub(/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/, "\1-\2-\3")
