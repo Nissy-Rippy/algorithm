@@ -16,7 +16,14 @@ puts "end"
 #start
 #例外が発生したが、このままプログラムを続けます
 #endとなるbegin のコードは実行されずスルーされている
-
+begin
+  1/0
+rescue => e
+  puts "エラークラス：#{e.class}"
+  puts "エラーメッセージ:#{e.message}"
+  puts "バックトレース:e.backtrace"
+  e.backtrace
+end
 begin
   1/0
 rescue => e
@@ -112,7 +119,9 @@ end
   
   class NoCountrytError < StandardError
   end
-  
+  　　
+   abc
+   
   def currency_of(country)
     case country
       when :japan

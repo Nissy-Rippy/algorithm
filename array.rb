@@ -35,8 +35,8 @@ end
     next if n.even?
     puts n
   end
-  
-  
+
+
 numbers =[1,2,3,4,5,6,]
 numbers.each do |number|
   next if n.odd?
@@ -59,7 +59,7 @@ puts calc_with_break
 
 def greeting(country)
   return "countryを入力してください" if country.nil?
- 
+
   if country == "japan"
      "こんにちは"
   else
@@ -203,7 +203,7 @@ p charge(59)
 
 numbers = [1,2,3,4,5,6,7,8,9,0]
 even_number = numbers.select { |number| number % 2 == 0 }
-puts eve
+puts even_number
 
 
 
